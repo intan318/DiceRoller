@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--android namespace is for all the attributes that come as part of the core Android framework-->
+<!--app namespace is for the attributes that come from your custom code or libraries (not from the core framework) -->
+
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -6,15 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:padding="12dp"
         tools:context=".MainActivity">
 
    <ImageView
      android:id="@+id/imgDice"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:src="@drawable/empty_dice"
-     android:layout_gravity="center"
+     app:srcCompat = "@drawable/empty_dice"
+     tools:src="@drawable/dice_1"
+     android:layout_gravity="center_horizontal"
    />
+    <!--source compat is using the androidx lib to support vector drawable in older versions of Android all the way back to API Level 7 -->
+    <!--android:src in xml during runtime this will show up on the app, whereas if you use tools:src in xml it will show only on the preview of Android studio and not on the runtime of the app.-->
 
     <Button
      android:id="@+id/rollButton"
